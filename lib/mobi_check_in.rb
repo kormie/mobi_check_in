@@ -66,8 +66,11 @@ module MobiCheckIn
 
   def self.push_command
     if File::exists? '.mobi_check_in.yml'
-      system(YAML::load(File.read('.mobi_check_in.yml'))["push_command"]) || standard_push
+      config_file = File.read('.mobi_check_in.yml')
+      push command = YAML::load(config_file)["push_command"]
+      return system(push_command) if push_command
     end
+    standard_push
   end
 
   def self.standard_push
