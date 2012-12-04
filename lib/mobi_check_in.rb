@@ -24,7 +24,6 @@ module MobiCheckIn
       begin
         $stdout.write "Story number (NA) [#{story_number}]: "
         input = $stdin.gets.strip
-        input = "MOBI-#{input}" if input =~ /^\d*$/
         story_number = input unless input.empty?
       end until !story_number.empty?
 
@@ -35,6 +34,7 @@ module MobiCheckIn
       if story_number.delete("/").downcase == "na"
         commit_message = ""
       else
+        story_numbe = "MOBI-#{story_number}" if story_number =~ /^\d*$/
         commit_message = "#{story_number} - #{pair_names} - "
       end
 
@@ -61,20 +61,7 @@ module MobiCheckIn
     puts Git.local_commits
     puts "*******"
     puts "Shoving..."
-    push_command
-  end
-
-  def self.push_command
-    if File::exists? '.mobi_check_in.yml'
-      config_file = File.read('.mobi_check_in.yml')
-      push command = YAML::load(config_file)["push_command"]
-      return system(push_command) if push_command
-    end
-    standard_push
-  end
-
-  def self.standard_push
-    system("git push")
+    system("git sc")
   end
 
   def self.push_and_test
