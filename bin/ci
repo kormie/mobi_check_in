@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+require 'mobi_check_in'
+
+MobiCheckIn.incremental :add => true
+MobiCheckIn.push_and_test
+

@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["David Kormushoff"]
   gem.email         = ["kormie@gmail.com"]
   gem.description   = %q{A check in gem}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = %q{A way to check in}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
