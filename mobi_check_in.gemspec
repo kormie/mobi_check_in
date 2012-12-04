@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = MobiCheckIn::VERSION
   gem.authors       = ["David Kormushoff"]
   gem.email         = ["kormie@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.description   = %q{A check in gem}
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
 
