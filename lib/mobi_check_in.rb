@@ -3,12 +3,27 @@ require "mobi_check_in/git"
 require "yaml"
 
 module MobiCheckIn
+
+  def self.isWindows?
+    platform = RUBY_PLATFORM.downcase
+    windows_names = %Q{mswin cygwin mingw}
+    windows_names.each { |name| return true if platform.include?(name) }
+    false
+  end
+
+  def self.history_file
+    if isWindows?
+      '~/AppData/Local/Temp/mobi_check_in.yml'
+    else
+      '/tmp/mobi_check_in_history.yml'
+    end
+  end
+
   def self.incremental options={}
     pair_names = ""
     story_number = ""
 
     if Git.has_local_changes?
-      history_file = '/tmp/mobi_check_in_history.yml'
       if File.exists?(history_file)
         shove_history = YAML::load(File.open(history_file))["shove"]
         pair_names    = shove_history["pair"]
