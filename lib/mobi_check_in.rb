@@ -24,6 +24,7 @@ module MobiCheckIn
       begin
         $stdout.write "Story number (NA) [#{story_number}]: "
         input = $stdin.gets.strip
+        input = "MOBI-#{input}" if input =~ /^\d*$/
         story_number = input unless input.empty?
       end until !story_number.empty?
 
@@ -34,7 +35,6 @@ module MobiCheckIn
       if story_number.delete("/").downcase == "na"
         commit_message = ""
       else
-        story_numbe = "MOBI-#{story_number}" if story_number =~ /^\d*$/
         commit_message = "#{story_number} - #{pair_names} - "
       end
 
