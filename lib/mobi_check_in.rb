@@ -6,7 +6,7 @@ module MobiCheckIn
 
   def self.isWindows?
     platform = RUBY_PLATFORM.downcase
-    windows_names = ['mswin', 'cygwin', 'mingw']
+    windows_names = %w{mswin cygwin mingw}
     windows_names.each { |name| return true if platform.include?(name) }
     false
   end
