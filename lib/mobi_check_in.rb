@@ -13,7 +13,7 @@ module MobiCheckIn
 
   def self.history_file
     if isWindows?
-      '~/AppData/Local/Temp/mobi_check_in.yml'
+      ENV['HOME'] + '/AppData/Local/Temp/mobi_check_in.yml'
     else
       '/tmp/mobi_check_in_history.yml'
     end
