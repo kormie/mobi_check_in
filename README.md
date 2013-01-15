@@ -4,15 +4,7 @@ TODO: Write a gem description
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'mobi_check_in'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Once Ruby and Rubygems are installed, install via the command line:
 
     $ gem install mobi_check_in
 
