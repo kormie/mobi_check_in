@@ -19,12 +19,15 @@ Or install it yourself as:
 ## Usage
 
 To commit what's in the index without pushing:
+
     $ mcii
 
 To commit all changes without pushing:
+
     $ mcic
 
 To commit and push all changes:
+
     $ mci
 
 ## Contributing
