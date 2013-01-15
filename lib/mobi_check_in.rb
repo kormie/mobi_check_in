@@ -19,6 +19,14 @@ module MobiCheckIn
     end
   end
 
+  def self.printable_story_number(story_number)
+    if story_number =~ /^\d*$/
+      "MOBI-#{story_number}"
+    else
+      story_number
+    end
+  end
+
   def self.incremental options={}
     pair_names = ""
     story_number = ""
@@ -39,7 +47,6 @@ module MobiCheckIn
       begin
         $stdout.write "Story number (NA) [#{story_number}]: "
         input = $stdin.gets.strip
-        input = "MOBI-#{input}" if input =~ /^\d*$/
         story_number = input unless input.empty?
       end until !story_number.empty?
 
@@ -50,13 +57,18 @@ module MobiCheckIn
       if story_number.delete("/").downcase == "na"
         commit_message = ""
       else
-        commit_message = "#{story_number} - #{pair_names} - "
+        commit_message = "#{printable_story_number(story_number)} - #{pair_names} - "
       end
 
       author = "#{pair_names}"
 
       system("git add -A") if options[:add]
-      system("EDITOR=vim git commit --author='#{author}' -e -m '#{commit_message}'")
+      puts "Enter a commit message: "
+      commit_message_text = gets.chomp
+      commit_message = commit_message + commit_message_text
+      puts commit_message
+      command = "git commit -m \"#{commit_message}\""
+      system(command)
     else
       puts "No local changes to commit."
     end

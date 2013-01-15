@@ -1,3 +1,3 @@
 module MobiCheckIn
-  VERSION = "0.0.8"
+  VERSION = "0.0.20"
 end
