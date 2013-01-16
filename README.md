@@ -1,6 +1,6 @@
 # MobiCheckIn
 
-TODO: Write a gem description
+MobiCheckIn helps automate the check in process!
 
 ## Installation
 
