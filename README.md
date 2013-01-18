@@ -1,6 +1,7 @@
 # MobiCheckIn
 
 MobiCheckIn helps automate the check in process!
+
 [![Gem Version](https://badge.fury.io/rb/mobi_check_in.png)](http://badge.fury.io/rb/mobi_check_in)
 
 ## Installation
