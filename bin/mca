@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'mobi_check_in'
+
+MobiCheckIn.amend

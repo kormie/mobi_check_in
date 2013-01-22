@@ -104,4 +104,9 @@ module MobiCheckIn
     end
   end
 
+  def self.amend
+    command = "git commit --amend -C HEAD"
+    system(command)
+  end
+
 end

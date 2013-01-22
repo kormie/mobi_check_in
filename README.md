@@ -24,6 +24,10 @@ To commit and push all changes:
 
     $ mci
 
+To ammend a commit
+
+    $ mca
+
 ## Contributing
 
 1. Fork it
