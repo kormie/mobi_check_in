@@ -9,7 +9,7 @@ module MobiCheckIn
     end
 
     def self.local_commits
-      `git log origin/#{current_branch}..HEAD`
+      `git log git-svn..HEAD`
     end
 
     def self.has_local_changes?
