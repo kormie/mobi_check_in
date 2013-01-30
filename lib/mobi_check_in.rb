@@ -105,7 +105,7 @@ module MobiCheckIn
   end
 
   def self.amend
-    if `git log --branches --not --remotes --oneline` == ""
+    if Git.local_commits == ""
       puts "You have no unpushed commits to amend to"
     else
       command = "git commit --amend -C HEAD"
