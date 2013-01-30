@@ -9,7 +9,7 @@ module MobiCheckIn
     end
 
     def self.local_commits
-      `git log git-svn..HEAD`
+      `git log --branches --not --remotes --oneline`
     end
 
     def self.has_local_changes?
