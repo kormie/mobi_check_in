@@ -1,11 +1,7 @@
 module MobiCheckIn
   module Git
     def self.current_branch
-      `git branch --no-color 2> /dev/null`.split("\n")
-                                          .select{ |branch| branch.match(/\* /) }
-                                          .first
-                                          .split("* ")
-                                          .last
+      `git branch --no-color 2> /dev/null`.split("\n").select{ |branch| branch.match(/\* /) }.first.split("* ").last
     end
 
     def self.local_commits
